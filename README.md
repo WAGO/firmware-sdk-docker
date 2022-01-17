@@ -24,12 +24,12 @@ https://github.com/microsoft/vscode/issues/37947
 As a workaround you should add the firmware sources as a submodule:
 
     ```
-    git submodule add https://github.com/WAGO/pfc-firmware-sdk-G2.git
+    git submodule add https://github.com/WAGO/pfc-firmware-sdk-G2.git src
     ```
 2. **Build firmware image:**  
 Included is a build command  which you can call instead of *"ptxdistimages -q"* to start a "brute force" parallel build that repeats the compile process until the dependencies are all met. This is a workaround for the packages which have incomplete dependeny informations.
     ```
-    cd pfc-firmware-sdk-G2
+    cd src
     ptxdist select configs/wago-pfcXXX/ptxconfig_pfc_g2
     build
     ```
