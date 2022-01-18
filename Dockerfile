@@ -1,8 +1,11 @@
-FROM scratch 
+FROM scratch as base
 ADD src/platform-wago-pfcXXX/images/root.tgz /
-RUN rm -rf /boot 
-RUN rm -rf /usr/lib/modules
+RUN rm -r /boot 
+RUN rm -r /usr/lib/modules
+RUN rm -r /usr/share/licenses
 
+FROM scratch as final
+COPY --from=base / /
 LABEL maintainer="sergei.ikkert@wago.com, dirk.meihoefer@wago.com"
 LABEL description="WAGO Kontakttechnik firmware base image"
 CMD ["/bin/bash"]
