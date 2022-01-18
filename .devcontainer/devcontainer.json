@@ -14,7 +14,8 @@
 	"settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"mhutchie.git-graph"
+		"mhutchie.git-graph",
+		"ms-azuretools.vscode-docker"
 	],
 	"mounts": [
 		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
