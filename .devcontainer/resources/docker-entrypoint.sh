@@ -1,6 +1,4 @@
 #!/bin/bash
-/usr/local/share/docker-init.sh
-ptxdist platform configs/wago-pfcXXX/platformconfig
-ptxdist toolchain /opt/gcc-Toolchain-2019.12/arm-linux-gnueabihf/bin/
 git lfs pull
-$@
+export JFROG_APIKEY="$(cat /secrets/jfrog-api-key)"
+exec /usr/local/share/docker-init.sh "$@"

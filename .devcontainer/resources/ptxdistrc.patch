@@ -1,0 +1,36 @@
+--- ptxdistrc	2018-07-03 15:30:32.485590321 +0200
++++ ptxdistrc.default	2018-07-03 15:41:12.696083687 +0200
+@@ -33,12 +42,13 @@
+ 
+ #
+ # Source Download   
+ #
+ # PTXCONF_SETUP_NO_DOWNLOAD is not set
+-# PTXCONF_SETUP_PTXMIRROR_ONLY is not set
+-PTXCONF_SETUP_PTXMIRROR="http://www.pengutronix.de/software/ptxdist/temporary-src"
++PTXCONF_SETUP_PTXMIRROR_ONLY=y
++#PTXCONF_SETUP_PTXMIRROR="http://www.pengutronix.de/software/ptxdist/temporary-src"
++PTXCONF_SETUP_PTXMIRROR="http://svsv01003.wago.local/wago-ptxdist-src/"
+ PTXCONF_SETUP_DEBMIRROR="http://ftp.uni-kl.de/debian"
+ PTXCONF_SETUP_SFMIRROR="http://downloads.sourceforge.net/sourceforge"
+ PTXCONF_SETUP_GNUMIRROR="http://ftp.uni-kl.de/pub/gnu"
+ PTXCONF_SETUP_XORGMIRROR="http://ftp.sunet.se/pub/X11/ftp.x.org http://ftp.x.org/pub http://xorg.freedesktop.org/releases"
+ PTXCONF_SETUP_KERNELMIRROR="https://www.kernel.org/pub/linux http://www.linux-mips.org/pub/linux/mips http://mirror.linux.org.au/linux"
+@@ -59,15 +69,15 @@
+ 
+ #
+ # Developer Options 
+ #
+ # PTXCONF_SETUP_DISABLE_LOCAL_CHECK is not set
+-PTXCONF_SETUP_ENV_WHITELIST=""
++PTXCONF_SETUP_ENV_WHITELIST="http_proxy https_proxy no_proxy GIT_SSH GIT_SSH__PKEY BUILDTYPE SOURCE_DATE_EPOCH CCACHE_DIR CCACHE_MAXSIZE CCACHE_UMASK $DOCKER_ENV_WHITELIST"
+ # PTXCONF_SETUP_COMMON_CACHE is not set
+ # PTXCONF_SETUP_GEN_DEP_TREE is not set
+ # PTXCONF_SETUP_CHECK_EXIT_ON_ERROR is not set
+-# PTXCONF_SETUP_CCACHE is not set
++PTXCONF_SETUP_CCACHE=y
+ # PTXCONF_SETUP_PATCHIN_GIT is not set
+ # PTXCONF_SETUP_NFS_REL_SYMLINK is not set
+ # PTXCONF_SETUP_DIRECT_CLEAN is not set
+ PTXCONF_SETUP_HOST_CPP="cpp"
+ PTXCONF_SETUP_HOST_CC="gcc"
