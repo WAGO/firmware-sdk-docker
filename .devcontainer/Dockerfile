@@ -102,6 +102,7 @@ RUN git lfs install
 RUN git clone https://github.com/wago/gcc-toolchain-2019.12-precompiled.git /opt/gcc-Toolchain-2019.12/
 RUN rm -r /opt/gcc-Toolchain-2019.12/.git
 RUN git clone https://github.com/wago/ptxdist.git /ptxdist
+RUN cd /ptxdist && git checkout 8d495aab3689d2bff0ca82f2850de8e2bc812aeb
 COPY resources /usr/bin/
 
 RUN cd /ptxdist \
