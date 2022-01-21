@@ -82,7 +82,8 @@ RUN set -x \
     libxml-parser-perl \
     python-libxml2 \
     python-mako \
-    git \
+    python3-setuptools \
+    ccache \
     ssh \
     x11proto-core-dev \
     # added for xxd
