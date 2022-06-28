@@ -102,8 +102,7 @@ RUN git lfs install
 RUN git clone https://github.com/wago/gcc-toolchain-2019.12-precompiled.git /opt/gcc-Toolchain-2019.12/
 RUN rm -r /opt/gcc-Toolchain-2019.12/.git
 RUN git clone https://github.com/wago/ptxdist.git /ptxdist
-RUN cd /ptxdist && git checkout 8d495aab3689d2bff0ca82f2850de8e2bc812aeb
-COPY resources /usr/bin/
+RUN cd /ptxdist && git checkout Update-2020.08.0
 
 RUN cd /ptxdist \
     && ./configure \
@@ -111,18 +110,13 @@ RUN cd /ptxdist \
     && make install \
     && rm -r /ptxdist
 
-RUN set -x \
-    && cd /usr/local/lib/ptxdist-*/config/setup \
-    && mv /usr/bin/ptxdistrc.patch . \
-    && cat ptxdistrc.default \
-    && patch -r - < ptxdistrc.patch \
-    && rm ptxdistrc.patch
+COPY resources /
 
-RUN wget https://github.com/GitTools/GitVersion/releases/download/5.8.1/gitversion-linux-x64-5.8.1.tar.gz
-RUN tar -xvf gitversion-linux-x64-5.8.1.tar.gz
+RUN wget https://github.com/GitTools/GitVersion/releases/download/5.10.3/gitversion-linux-x64-5.10.3.tar.gz
+RUN tar -xvf gitversion-linux-x64-5.10.3.tar.gz
 RUN mv gitversion /usr/local/bin
 RUN chown ${NONROOT_USER} /usr/local/bin/gitversion
-RUN rm gitversion-linux-x64-5.8.1.tar.gz
+RUN rm gitversion-linux-x64-5.10.3.tar.gz
 
 # Install Docker CE CLI
 RUN apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release \
