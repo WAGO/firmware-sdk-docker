@@ -91,7 +91,8 @@ RUN set -x \
     # added for ptxdist documentation build
     python-docutils \
     # added for mkimage
-    u-boot-tools 
+    u-boot-tools \
+    doxygen 
 
 RUN apt-get install -y --no-install-recommends \
     git-lfs \
