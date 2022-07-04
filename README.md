@@ -18,16 +18,15 @@ Once you have this container running, you'll be able to work with **ptxdist** li
 
 Some things to try:
 
-1. **Clone firmware sources:**  
-For now nested repositories are not supported by VSCode. There is already an issue on GitHub - Git: 
-https://github.com/microsoft/vscode/issues/37947  
-As a workaround you should add the firmware sources as a submodule:
+1. **Get firmware sources:**  
+The scripts folder contains two init scripts to get the firmware sources via git or subversion (only suitable inside the WAGO corporate network). 
+```
+# Get the sources for firmware 21 from github
+scripts/init-github-src.sh FW21-V03.09.04
+```
 
-    ```
-    git submodule add https://github.com/WAGO/pfc-firmware-sdk-G2.git src
-    ```
 2. **Build firmware image:**  
-Included is a build command  which you can call instead of *"ptxdistimages -q"* to start a "brute force" parallel build that repeats the compile process until the dependencies are all met. This is a workaround for the packages which have incomplete dependeny informations.
+Included is a build command which you can try to call instead of *"ptxdist images -q"* to start a "brute force" parallel build that repeats the compile process until the dependencies are all met. This is a workaround for the packages which have incomplete dependeny informations.
     ```
     cd src
     ptxdist select configs/wago-pfcXXX/ptxconfig_pfc_g2

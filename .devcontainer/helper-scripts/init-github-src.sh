@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-TAG=FW21-V03.09.04
+TAG=${1:-FW21-V03.09.04}
 
 mkdir -p src/$TAG
 cd src/$TAG
