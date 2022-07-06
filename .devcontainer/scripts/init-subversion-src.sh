@@ -12,10 +12,10 @@ read -s -p "Password:" PASSWORD
 svn checkout --username $NAME --password $PASSWORD https://svsv01003.wago.local/svn/repo3/pfc/tags/wago-pfc200/$TAG/ src/$TAG
 
 mkdir -p ~/.ptxdist
-cp .devcontainer/helper-scripts/ptxdistrc-2020.08 ~/.ptxdist/ptxdistrc-2020.08
+cp .devcontainer/scripts/ptxdistrc-2020.08 ~/.ptxdist/ptxdistrc-2020.08
 cd src/$TAG/ptxproj
 ptxdist platform configs/wago-pfcXXX/platformconfig 
 ptxdist select configs/wago-pfcXXX/ptxconfig_pfc_g2
 ptxdist toolchain /opt/gcc-Toolchain-2019.12/arm-linux-gnueabihf/bin
-$SHELL
+
 
