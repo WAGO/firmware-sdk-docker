@@ -1,5 +1,6 @@
 FROM scratch as base
-ADD src/V03.09.07_21/ptxproj/platform-wago-pfcXXX/images/root.tgz /
+ARG SOURCE_DIR=V03.09.07_21
+ADD src/${SOURCE_DIR}/ptxproj/platform-wago-pfcXXX/images/root.tgz /
 RUN rm -r /boot 
 RUN rm -r /usr/lib/modules
 RUN rm -r /usr/share/licenses
