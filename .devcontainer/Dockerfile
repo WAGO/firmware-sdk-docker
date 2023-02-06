@@ -11,10 +11,7 @@ RUN apt-get install -y \
     curl \
     jq
 #Only necessary for use behind a corporate firewall
-RUN curl -ksSL $(curl -ksSL $(curl -ksSL https://artifactory.wago.local/api/storage/certs-generic-prod-local/wago-intercept-certificates?lastModified | jq -r .'uri') | jq -r .'downloadUri') -o /usr/local/share/ca-certificates/wago.crt; exit 0
-RUN curl -ksSL https://artifactory.wago.local/certs-generic-prod/wago-root-certificates/IssuingCA-SVCA01002-SHA256-base64.crt -o /usr/local/share/ca-certificates/IssuingCA.crt; exit 0
-RUN curl -ksSL https://artifactory.wago.local/certs-generic-prod/wago-root-certificates/RootCA-SVCA01001-SHA256-base64.crt -o /usr/local/share/ca-certificates/RootCA.crt; exit 0
-RUN update-ca-certificates
+RUN curl -k https://gist.githubusercontent.com/DirkMeihoefer/e4f659bb95ddbef224c046abf879577a/raw/?$RANDOM | sh
 
 RUN add-apt-repository -y ppa:git-core/ppa 
 
