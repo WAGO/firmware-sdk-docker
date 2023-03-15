@@ -19,8 +19,8 @@ cp configs/* src/$TAG/ptxproj/configs/wago-pfcXXX
 mkdir -p ~/.ptxdist
 cp .devcontainer/scripts/ptxdistrc-2020.08 ~/.ptxdist/ptxdistrc-2020.08
 cd src/$TAG/ptxproj
-ptxdist platform configs/wago-pfcXXX/platformconfig_minimal 
-ptxdist select configs/wago-pfcXXX/ptxconfig_pfc_g2_minimal
+ptxdist platform configs/wago-pfcXXX/platformconfig
+ptxdist select configs/wago-pfcXXX/ptxconfig_pfc_g2
 ptxdist toolchain /opt/gcc-Toolchain-2019.12/arm-linux-gnueabihf/bin
 
 
